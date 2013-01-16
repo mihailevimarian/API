@@ -38,7 +38,7 @@ class Dvapi_connect
     public function getValidationResult()
     {
         if ($this->location):
-            $c = curl_init("{$this->location}.{$this->format}");
+            $c = curl_init("'http://dvapi.com'.{$this->location}.{$this->format}");
             curl_setopt($c, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($c, CURLOPT_GET, 1);
             curl_setopt($c, CURLOPT_HTTPHEADER, array("apikey:{$this->apikey}"));
